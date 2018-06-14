@@ -4,7 +4,7 @@
       <h1 class="title">
         news-reader
       </h1>
-      <b-row v-for="(chunk, rowIndex) in articleChunks" :key="rowIndex">
+      <b-row v-for="(chunk, rowIndex) in articleChunks(4)" :key="rowIndex">
         <b-col cols="3" v-for="(article, colIndex) in chunk" :key="colIndex">
           <span>{{ article.title }}</span>
           <img class="articleImage" :src ="article.urlToImage" />
@@ -18,12 +18,13 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: {
-    ...mapGetters({
-      articles: 'get_articles'
-    }),
-    articleChunks() {
-      return _.chunk(this.articles, 4)
+  computed: mapGetters({
+    articles: 'get_articles'
+  }),
+
+  methods: {
+    articleChunks(size) {
+      return _.chunk(this.articles, size)
     }
   },
 
