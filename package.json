@@ -19,6 +19,7 @@
     "newsapi": "^2.2.2",
     "node-slug": "0.0.2",
     "nuxt": "^1.0.0",
+    "slug": "^0.9.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
