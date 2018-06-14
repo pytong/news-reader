@@ -19,7 +19,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: mapGetters({
-    articles: 'get_articles'
+    articles: 'articles/get'
   }),
 
   methods: {

@@ -1,19 +1,15 @@
-// export const state = () => ({
+export const state = () => ({
+  articles: []
+})
 
-// })
+export const mutations = {
+  set(state, articles) {
+    state.articles = articles
+  }
+}
 
-// export const mutations = {
-//   add(state, article) {
-//     state.list.push(article)
-//   },
-//   set_articles(state, articles) {
-//     console.log("sdsdsdsddsdd")
-//     state.list = articles
-//   }
-// }
-
-// export const getters = {
-//   get(state) {
-//     return state.list
-//   }
-// }
+export const getters = {
+  get(state) {
+    return state.articles
+  }
+}
