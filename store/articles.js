@@ -1,19 +1,19 @@
-export const state = () => ({
-  list: [
-    'Lorem ipsum',
-    'dolor sit amet',
-    'consetetur sadipscing elitr'
-  ]
-})
+// export const state = () => ({
 
-export const mutations = {
-  add(state, title) {
-    state.list.push(title)
-  }
-}
+// })
 
-export const getters = {
-  get(state) {
-    return state.list
-  }
-}
+// export const mutations = {
+//   add(state, article) {
+//     state.list.push(article)
+//   },
+//   set_articles(state, articles) {
+//     console.log("sdsdsdsddsdd")
+//     state.list = articles
+//   }
+// }
+
+// export const getters = {
+//   get(state) {
+//     return state.list
+//   }
+// }

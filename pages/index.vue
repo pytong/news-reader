@@ -1,15 +1,14 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
       <h1 class="title">
         news-reader
       </h1>
       <ul>
         <li v-for="(article, index) in articles" :key="index">
-          <span>{{ article }}</span>
+          <span>{{ article.title }}</span>
+          <img :src ="article.urlToImage" />
         </li>
-        <li><input placeholder="What needs to be done?" @keyup.enter="addTodo"></li>
       </ul>
     </div>
   </section>
@@ -17,14 +16,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Logo from '~/components/Logo.vue'
 
 export default {
   computed: mapGetters({
-    articles: 'articles/get'
+    articles: 'get_articles'
   }),
   components: {
-    Logo
   }
 }
 </script>
