@@ -18,7 +18,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import slugify from 'slugify'
+import slug from 'slug'
 
 export default {
   computed: mapGetters({
@@ -30,7 +30,7 @@ export default {
       return _.chunk(this.articles, size)
     },
     urlSlug(url) {
-      return slugify(url)
+      return slug(url)
     }
   },
 
