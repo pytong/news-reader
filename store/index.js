@@ -1,17 +1,32 @@
+import constant from '@/const'
+
+const moment = require('moment')
+const NewsAPI = require('newsapi')
+const newsapi = new NewsAPI(constant.news_api_key)
+
 export const state = () => ({
   articles: []
 })
 
 export const mutations = {
   set_articles(state, articles) {
-    console.log("sdsdsdsddsdd")
     state.articles = articles
   }
 }
 
 export const actions =  {
   async nuxtServerInit({ commit }, { app }) {
-    const { articles } = await app.$axios.$get('https://newsapi.org/v2/everything?q=usa&apiKey=528fda8f85ce461fb3754e542d651b19')
+    const yesterdayDate = moment().add(-1, 'days').format('YYYY-MM-DD')
+
+    const { articles } = await newsapi.v2.topHeadlines({
+      category: 'business',
+      language: 'en',
+      country: 'us',
+      from: yesterdayDate,
+      language: 'en',
+      sortBy: 'popularity'
+    })
+
     commit('set_articles', articles)
   }
 }

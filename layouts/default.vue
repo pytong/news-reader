@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <b-container fluid>
     <nuxt/>
-  </div>
+  </b-container>
 </template>
 
 <style>
