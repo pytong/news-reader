@@ -17,6 +17,6 @@ export const actions =  {
       sortBy: 'popularity'
     })
 
-    commit('articles/set', articles)
+    commit('articles/setArticles', articles)
   }
 }
