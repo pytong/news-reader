@@ -7,7 +7,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Pageres from 'pageres'
 
 export default {
   computed: mapGetters({

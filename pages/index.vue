@@ -21,7 +21,6 @@
 <script>
 import { mapGetters } from 'vuex'
 import slug from 'slug'
-import Pageres from 'pageres'
 
 export default {
   computed: mapGetters({
