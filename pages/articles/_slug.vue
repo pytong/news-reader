@@ -16,8 +16,9 @@ export default {
   }),
 
   methods: {
-    async fetchArticle () {
-      const url = 'http://localhost:3001/news'
+    async fetchContent () {
+      const url = 'http://localhost:3001/news/content'
+
       const { content } = await this.$axios.$get(url, {
         params: {
           articleUrl: this.$route.query.articleUrl
@@ -28,14 +29,24 @@ export default {
 
       console.log(content)
     },
-    generateViewArticleScreenshot() {
+    async generateViewArticleScreenshot() {
+      const url = 'http://localhost:3001/news/screenshot'
 
+      const { snapshotPath } = await this.$axios.$get(url, {
+        params: {
+          articleUrl: this.$route.query.articleUrl
+        }
+      }, {
+        headers: {'Access-Control-Allow-Origin': '*'}
+      })
+
+      console.log(snapshotPath)
     }
   },
 
   beforeMount() {
     this.generateViewArticleScreenshot()
-    this.fetchArticle()
+    this.fetchContent()
   },
 
   components: {
