@@ -66,6 +66,7 @@ module.exports = {
         '_': 'lodash'
       })
     ],
+    vendor: ['~/assets/js/articulate.min.js'],
 
     extend(config, ctx) {
       // Run ESLint on save
